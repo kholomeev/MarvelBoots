@@ -33,5 +33,16 @@ namespace WindowsFormsApp.Properties {
                 return ((string)(this["ShoesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=gogs.wsr.ru;Initial Catalog=holomeev_marvelboots;User ID=260-23;Passw" +
+            "ord=Funtic2006;TrustServerCertificate=True")]
+        public string holomeev_marvelbootsConnectionString {
+            get {
+                return ((string)(this["holomeev_marvelbootsConnectionString"]));
+            }
+        }
     }
 }

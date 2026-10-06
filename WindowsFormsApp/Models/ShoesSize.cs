@@ -11,13 +11,16 @@ namespace WindowsFormsApp.Models
     {
         public int ShoesSizeId { get; set; }
 
-        public int? ProductId { get; set; }
+        public int ProductId { get; set; }
 
         [Column(TypeName = "numeric")]
-        public decimal PossibleSize { get; set; }
+        public decimal Size { get; set; }
 
-        [Column(TypeName = "numeric")]
-        public decimal? AvailableSize { get; set; }
+        [Required]
+        [StringLength(10)]
+        public string Name { get; set; }
+
+        public int PairQuantity { get; set; }
 
         public virtual Product Product { get; set; }
     }

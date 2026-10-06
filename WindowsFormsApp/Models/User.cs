@@ -19,15 +19,8 @@ namespace WindowsFormsApp.Models
         public int IdUser { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string LastNameUser { get; set; }
-
-        [Required]
-        [StringLength(50)]
+        [StringLength(150)]
         public string NameUser { get; set; }
-
-        [StringLength(50)]
-        public string FatherNameUser { get; set; }
 
         [Required]
         [StringLength(50)]
