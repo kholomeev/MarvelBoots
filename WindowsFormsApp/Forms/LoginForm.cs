@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp.Forms
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : ParentForm
     {
         public LoginForm()
         {
             InitializeComponent();
+            HideBackButton();
+            SetTitle("Вход");
         }
     }
 }

@@ -18,6 +18,16 @@ namespace WindowsFormsApp.Forms
             InitializeComponent();
         }
 
+        public void HideBackButton()
+        {
+            button1.Visible = false;
+        }
+
+        public void SetTitle(string title)
+        {
+            this.Text = title;
+        }
+
         private void ParentForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
