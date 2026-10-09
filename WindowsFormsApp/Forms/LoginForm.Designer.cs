@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.guestButton = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.usernametextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -42,9 +42,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.textBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.button3);
-            this.splitContainer1.Panel2.Controls.Add(this.button2);
+            this.splitContainer1.Panel2.Controls.Add(this.usernametextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.loginButton);
+            this.splitContainer1.Panel2.Controls.Add(this.guestButton);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             // 
             // label4
@@ -56,34 +56,36 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Логин";
             // 
-            // button2
+            // guestButton
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Location = new System.Drawing.Point(705, 309);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Гость";
-            this.button2.UseVisualStyleBackColor = false;
+            this.guestButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
+            this.guestButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.guestButton.Location = new System.Drawing.Point(705, 309);
+            this.guestButton.Name = "guestButton";
+            this.guestButton.Size = new System.Drawing.Size(75, 23);
+            this.guestButton.TabIndex = 1;
+            this.guestButton.Text = "Гость";
+            this.guestButton.UseVisualStyleBackColor = false;
+            this.guestButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // loginButton
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Location = new System.Drawing.Point(243, 178);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(314, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Вход";
-            this.button3.UseVisualStyleBackColor = false;
+            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
+            this.loginButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginButton.Location = new System.Drawing.Point(243, 178);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(314, 23);
+            this.loginButton.TabIndex = 2;
+            this.loginButton.Text = "Вход";
+            this.loginButton.UseVisualStyleBackColor = false;
+            this.loginButton.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox1
+            // usernametextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(297, 138);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 21);
-            this.textBox1.TabIndex = 3;
+            this.usernametextBox.Location = new System.Drawing.Point(297, 138);
+            this.usernametextBox.Name = "usernametextBox";
+            this.usernametextBox.Size = new System.Drawing.Size(260, 21);
+            this.usernametextBox.TabIndex = 3;
             // 
             // LoginForm
             // 
@@ -103,8 +105,8 @@
         #endregion
 
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox usernametextBox;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Button guestButton;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp.Services;
 
 namespace WindowsFormsApp.Forms
 {
@@ -20,7 +21,7 @@ namespace WindowsFormsApp.Forms
 
         public void HideBackButton()
         {
-            button1.Visible = false;
+            backButton.Visible = false;
         }
 
         public void SetTitle(string title)
@@ -31,6 +32,26 @@ namespace WindowsFormsApp.Forms
         private void ParentForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormManager.GoBack(this);
+        }
+
+        private void ShowUser()
+        {
+            if (UserSession.User != null)
+            {
+                fullNameLabel.Text = "${UserSession.User}";
+                roleLabel.Text = UserSession.User.UserRole1.UserRoleName;
+            }
+            throw new NotImplementedException();
+        }
+
+        private void ParentForm_Load(object sender, EventArgs e)
+        {
+            ShowUser();
         }
     }
 }

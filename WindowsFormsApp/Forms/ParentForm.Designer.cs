@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ParentForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.roleLabel = new System.Windows.Forms.Label();
+            this.fullNameLabel = new System.Windows.Forms.Label();
+            this.backButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -55,9 +55,9 @@
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(246)))), ((int)(((byte)(231)))));
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox2);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.button1);
+            this.splitContainer1.Panel1.Controls.Add(this.roleLabel);
+            this.splitContainer1.Panel1.Controls.Add(this.fullNameLabel);
+            this.splitContainer1.Panel1.Controls.Add(this.backButton);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
@@ -76,33 +76,34 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
             // 
-            // label3
+            // roleLabel
             // 
-            this.label3.Location = new System.Drawing.Point(371, 35);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 13);
-            this.label3.TabIndex = 4;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.roleLabel.Location = new System.Drawing.Point(371, 35);
+            this.roleLabel.Name = "roleLabel";
+            this.roleLabel.Size = new System.Drawing.Size(301, 13);
+            this.roleLabel.TabIndex = 4;
+            this.roleLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label2
+            // fullNameLabel
             // 
-            this.label2.Location = new System.Drawing.Point(371, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(301, 13);
-            this.label2.TabIndex = 3;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.fullNameLabel.Location = new System.Drawing.Point(371, 12);
+            this.fullNameLabel.Name = "fullNameLabel";
+            this.fullNameLabel.Size = new System.Drawing.Size(301, 13);
+            this.fullNameLabel.TabIndex = 3;
+            this.fullNameLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // button1
+            // backButton
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Location = new System.Drawing.Point(705, 7);
-            this.button1.Margin = new System.Windows.Forms.Padding(20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Назад";
-            this.button1.UseVisualStyleBackColor = false;
+            this.backButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
+            this.backButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backButton.Location = new System.Drawing.Point(705, 7);
+            this.backButton.Margin = new System.Windows.Forms.Padding(20);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 2;
+            this.backButton.Text = "Назад";
+            this.backButton.UseVisualStyleBackColor = false;
+            this.backButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -136,6 +137,7 @@
             this.Name = "ParentForm";
             this.Text = "ParentForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ParentForm_FormClosed);
+            this.Load += new System.EventHandler(this.ParentForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -150,10 +152,10 @@
 
         public System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label fullNameLabel;
+        private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label roleLabel;
     }
 }

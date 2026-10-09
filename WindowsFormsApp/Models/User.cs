@@ -4,6 +4,7 @@ namespace WindowsFormsApp.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.Data;
     using System.Data.Entity.Spatial;
 
     [Table("User")]
@@ -32,5 +33,30 @@ namespace WindowsFormsApp.Models
         public virtual ICollection<Orders> Orders { get; set; }
 
         public virtual UserRole UserRole1 { get; set; }
+
+        // STUD {
+
+        //public override string ToString()
+        //{
+            //return $"{LastName} {FirstName} {PatronymicName}";
+        //}
+
+        public bool IsAdmin()
+        {
+            return UserRole == 1;
+        }
+
+        public bool IsManager()
+        {
+            return UserRole == 2;
+        }
+
+        internal bool IsClient()
+        {
+            return UserRole == 3;
+        }
+
+        // } STUD
+
     }
 }
