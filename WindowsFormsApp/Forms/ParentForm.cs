@@ -43,10 +43,9 @@ namespace WindowsFormsApp.Forms
         {
             if (UserSession.User != null)
             {
-                fullNameLabel.Text = "${UserSession.User}";
-                roleLabel.Text = UserSession.User.UserRole1.UserRoleName;
+                fullNameLabel.Text = $"{UserSession.User}";
+                roleLabel.Text = UserSession.User.UserRole;
             }
-            throw new NotImplementedException();
         }
 
         private void ParentForm_Load(object sender, EventArgs e)

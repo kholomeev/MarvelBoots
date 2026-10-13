@@ -27,7 +27,6 @@ namespace WindowsFormsApp
                     MessageBoxIcon.Error);
             }
 
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());

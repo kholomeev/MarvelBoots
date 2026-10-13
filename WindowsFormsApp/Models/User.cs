@@ -4,7 +4,6 @@ namespace WindowsFormsApp.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data;
     using System.Data.Entity.Spatial;
 
     [Table("User")]
@@ -20,43 +19,50 @@ namespace WindowsFormsApp.Models
         public int IdUser { get; set; }
 
         [Required]
-        [StringLength(150)]
-        public string NameUser { get; set; }
+        [StringLength(50)]
+        public string LastName { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Name { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string PatronymicName { get; set; }
 
         [Required]
         [StringLength(50)]
         public string Login { get; set; }
 
-        public int UserRole { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string UserRole { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
 
-        public virtual UserRole UserRole1 { get; set; }
-
         // STUD {
 
-        //public override string ToString()
-        //{
-            //return $"{LastName} {FirstName} {PatronymicName}";
-        //}
+        public override string ToString()
+        {
+            return $"{LastName} {Name} {PatronymicName}";
+        }
 
         public bool IsAdmin()
         {
-            return UserRole == 1;
+            return UserRole == "Администратор";
         }
 
         public bool IsManager()
         {
-            return UserRole == 2;
+            return UserRole == "Менеджер";
         }
 
         internal bool IsClient()
         {
-            return UserRole == 3;
+            return UserRole == "Авторизованный пользователь";
         }
 
         // } STUD
-
     }
 }

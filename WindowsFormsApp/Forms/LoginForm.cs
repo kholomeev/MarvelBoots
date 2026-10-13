@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp.Models;
 using WindowsFormsApp.Services;
 
 namespace WindowsFormsApp.Forms
@@ -27,10 +28,11 @@ namespace WindowsFormsApp.Forms
                 AuthManager.Login(usernametextBox.Text);
                 FormManager.NavigateTo(new ProductListForm(), this);
             }
-            catch (InvalidOperationException ex)
+            catch (InvalidOperationException)
             {
                 MessageBox.Show("Имя пользователя неверно.", "Имя пользователя неверно.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void button2_Click(object sender, EventArgs e)
