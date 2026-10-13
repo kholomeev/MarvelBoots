@@ -7,15 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp.Models;
+using WindowsFormsApp.UserControls;
 
 namespace WindowsFormsApp.Forms
 {
     public partial class ProductListForm : ParentForm
     {
+        private List<Product> _products;
         public ProductListForm()
         {
             InitializeComponent();
             SetTitle("Каталог товаров");
+        }
+
+        private void ProductListForm_Load(object sender, EventArgs e)
+        {
+            SelectProducts();
+            ShowProducts();
+        }
+
+        private void ShowProducts()
+        {
+            _products = Program.context.ShoesSize.
+                Where(p => p.PairQuantity > 0).
+                Select(p => p.Product).
+                Distinct().ToList();
+        }
+
+        private void SelectProducts()
+        {
+            foreach (Product product in _products)
+            {
+                flowLayoutPanel.Controls.Add(new ProductControl());
+            }
         }
     }
 }
