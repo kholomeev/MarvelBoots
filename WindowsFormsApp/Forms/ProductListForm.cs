@@ -27,7 +27,7 @@ namespace WindowsFormsApp.Forms
             ShowProducts();
         }
 
-        private void ShowProducts()
+        private void SelectProducts()
         {
             _products = Program.context.ShoesSize.
                 Where(p => p.PairQuantity > 0).
@@ -35,7 +35,7 @@ namespace WindowsFormsApp.Forms
                 Distinct().ToList();
         }
 
-        private void SelectProducts()
+        private void ShowProducts()
         {
             foreach (Product product in _products)
             {
