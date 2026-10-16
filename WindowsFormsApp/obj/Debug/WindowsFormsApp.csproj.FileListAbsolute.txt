@@ -1,0 +1,75 @@
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe.config
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\WindowsFormsApp.pdb
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\EntityFramework.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\EntityFramework.SqlServer.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\MSTest.TestFramework.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\MSTest.TestFramework.Extensions.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\System.Threading.Tasks.Extensions.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\EntityFramework.xml
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\EntityFramework.SqlServer.xml
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\MSTest.TestFramework.xml
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\MSTest.TestFramework.Extensions.xml
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\System.Threading.Tasks.Extensions.xml
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\cs\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\de\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\es\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\fr\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\it\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\ja\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\ko\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\pl\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\pt-BR\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\ru\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\tr\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\zh-Hans\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\zh-Hant\MSTest.TestFramework.resources.dll
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.AssemblyReference.cache
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.Properties.Resources.resources
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsF.5F5EF213.Up2Date
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.exe
+T:\Граблевский М.В\razr\sem_2\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe.config
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\WindowsFormsApp.exe
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\WindowsFormsApp.pdb
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\EntityFramework.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\MSTest.TestFramework.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\MSTest.TestFramework.Extensions.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\EntityFramework.xml
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\MSTest.TestFramework.xml
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\MSTest.TestFramework.Extensions.xml
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\cs\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\de\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\es\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\fr\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\it\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\ja\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\ko\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\pl\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\pt-BR\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\ru\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\tr\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\zh-Hans\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\bin\Debug\zh-Hant\MSTest.TestFramework.resources.dll
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.AssemblyReference.cache
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.Forms.LoginForm.resources
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.Forms.ParentForm.resources
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.Properties.Resources.resources
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.UserControls.ProductControl.resources
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.GenerateResource.cache
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.csproj.CoreCompileInputs.cache
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsF.5F5EF213.Up2Date
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.exe
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.pdb
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.Forms.ProductListForm.resources
