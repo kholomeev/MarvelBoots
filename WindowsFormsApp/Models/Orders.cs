@@ -8,6 +8,12 @@ namespace WindowsFormsApp.Models
 
     public partial class Orders
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Orders()
+        {
+            OrderProduct = new HashSet<OrderProduct>();
+        }
+
         [Key]
         public int OrderId { get; set; }
 
@@ -16,15 +22,14 @@ namespace WindowsFormsApp.Models
 
         public int UserId { get; set; }
 
-        public int ProductId { get; set; }
-
         public int ShoesSize { get; set; }
 
         public int Quantity { get; set; }
 
         public int Price { get; set; }
 
-        public virtual Product Product { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<OrderProduct> OrderProduct { get; set; }
 
         public virtual User User { get; set; }
     }

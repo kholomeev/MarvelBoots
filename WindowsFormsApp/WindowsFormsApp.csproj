@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="Models\Manufacturer.cs" />
     <Compile Include="Models\MarvelBoots.cs" />
+    <Compile Include="Models\OrderProduct.cs" />
     <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ShoesSize.cs" />

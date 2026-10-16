@@ -1,11 +1,11 @@
 namespace WindowsFormsApp.Models
 {
     using System;
-    using System.Linq;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
 
     [Table("Product")]
     public partial class Product
@@ -13,7 +13,7 @@ namespace WindowsFormsApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Product()
         {
-            Orders = new HashSet<Orders>();
+            OrderProduct = new HashSet<OrderProduct>();
             ShoesSize = new HashSet<ShoesSize>();
         }
 
@@ -51,7 +51,7 @@ namespace WindowsFormsApp.Models
         public virtual Manufacturer Manufacturer { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
+        public virtual ICollection<OrderProduct> OrderProduct { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ShoesSize> ShoesSize { get; set; }
@@ -69,15 +69,15 @@ namespace WindowsFormsApp.Models
 
             int currentYear = DateTime.Now.Year;
 
-            bool hasSales = Program.context.OrderProduct.Count(op => op.ProductId == this.IdProduct &&
-                           op.Order.Date.Year == currentYear &&
-                           op.Order.Date.Month == 4) > 0; // STUD Апрель.
+            bool hasSales = Program.context.OrderProduct.Count(op => op.IdProduct == this.ProductId &&
+                           op.Orders.OrderDate.Year == currentYear &&
+                           op.Orders.OrderDate.Month == 4) > 0; // STUD Апрель.
 
-            Decimal result = ProductPrice;
+            Decimal result = Price;
 
             if (!hasSales)
             {
-                result = Math.Round(ProductPrice * 0.75m, 2); // STUD Скидка 25 %.
+                result = Math.Round(Price * 0.75m, 2); // STUD Скидка 25 %.
             }
 
             return result;
@@ -111,7 +111,5 @@ namespace WindowsFormsApp.Models
             return result;
 
         }
-
-
     }
 }
