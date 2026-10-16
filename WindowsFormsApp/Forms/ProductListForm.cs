@@ -39,7 +39,7 @@ namespace WindowsFormsApp.Forms
         {
             foreach (Product product in _products)
             {
-                flowLayoutPanel.Controls.Add(new ProductControl());
+                flowLayoutPanel.Controls.Add(new ProductControl(product));
             }
         }
     }

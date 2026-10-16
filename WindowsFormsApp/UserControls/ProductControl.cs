@@ -4,17 +4,34 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp.Models;
 
 namespace WindowsFormsApp.UserControls
 {
     public partial class ProductControl : UserControl
     {
-        public ProductControl()
+        private Product _product;
+        public ProductControl(Product product)
         {
             InitializeComponent();
+            _product = product;
+            ShowInfo();
         }
+
+        private void ShowInfo()
+        {
+            manufacturerLabel.Text = $"{_product.Manufacturer.ManufacturerName} | {_product.ProductName}";
+            categoryLabel.Text = $"Категория: {_product.Category}";
+            stockLabel.Text = $"Количество: {_product.GetStock()}";
+            compositionLabel.Text = $"Состав: {_product.Сomposition}";
+            priceLabel.Text = $"Цена:\n {_product.GetPrice()} руб.";
+            idLabel.Text = $"Id: {_product.IdProduct}";
+            throw new NotImplementedException();
+        }
+
     }
 }

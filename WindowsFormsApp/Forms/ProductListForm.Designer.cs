@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cheapFirst = new System.Windows.Forms.RadioButton();
-            this.expensiveFirst = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.categoryComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.ordersButton = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.expensiveFirst = new System.Windows.Forms.RadioButton();
+            this.cheapFirst = new System.Windows.Forms.RadioButton();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -67,55 +67,32 @@
             this.panel.Size = new System.Drawing.Size(800, 50);
             this.panel.TabIndex = 0;
             // 
-            // flowLayoutPanel
+            // ordersButton
             // 
-            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 50);
-            this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(800, 306);
-            this.flowLayoutPanel.TabIndex = 1;
+            this.ordersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
+            this.ordersButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ordersButton.Location = new System.Drawing.Point(705, 14);
+            this.ordersButton.Name = "ordersButton";
+            this.ordersButton.Size = new System.Drawing.Size(75, 23);
+            this.ordersButton.TabIndex = 5;
+            this.ordersButton.Text = "Заказы";
+            this.ordersButton.UseVisualStyleBackColor = false;
             // 
-            // groupBox1
+            // textBox1
             // 
-            this.groupBox1.Controls.Add(this.expensiveFirst);
-            this.groupBox1.Controls.Add(this.cheapFirst);
-            this.groupBox1.Location = new System.Drawing.Point(12, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(148, 41);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Цена";
+            this.textBox1.Location = new System.Drawing.Point(447, 17);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 4;
             // 
-            // cheapFirst
+            // label3
             // 
-            this.cheapFirst.AutoSize = true;
-            this.cheapFirst.Checked = true;
-            this.cheapFirst.Location = new System.Drawing.Point(6, 18);
-            this.cheapFirst.Name = "cheapFirst";
-            this.cheapFirst.Size = new System.Drawing.Size(65, 17);
-            this.cheapFirst.TabIndex = 0;
-            this.cheapFirst.TabStop = true;
-            this.cheapFirst.Text = "Меньше";
-            this.cheapFirst.UseVisualStyleBackColor = true;
-            // 
-            // expensiveFirst
-            // 
-            this.expensiveFirst.AutoSize = true;
-            this.expensiveFirst.Location = new System.Drawing.Point(81, 18);
-            this.expensiveFirst.Name = "expensiveFirst";
-            this.expensiveFirst.Size = new System.Drawing.Size(62, 17);
-            this.expensiveFirst.TabIndex = 1;
-            this.expensiveFirst.Text = "Больше";
-            this.expensiveFirst.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(184, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Категория";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(405, 19);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Поиск";
             // 
             // categoryComboBox
             // 
@@ -131,32 +108,56 @@
             this.categoryComboBox.Size = new System.Drawing.Size(121, 21);
             this.categoryComboBox.TabIndex = 2;
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(405, 19);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Поиск";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(184, 19);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Категория";
             // 
-            // textBox1
+            // groupBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(447, 17);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 4;
+            this.groupBox1.Controls.Add(this.expensiveFirst);
+            this.groupBox1.Controls.Add(this.cheapFirst);
+            this.groupBox1.Location = new System.Drawing.Point(12, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(148, 41);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Цена";
             // 
-            // ordersButton
+            // expensiveFirst
             // 
-            this.ordersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
-            this.ordersButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ordersButton.Location = new System.Drawing.Point(705, 14);
-            this.ordersButton.Name = "ordersButton";
-            this.ordersButton.Size = new System.Drawing.Size(75, 23);
-            this.ordersButton.TabIndex = 5;
-            this.ordersButton.Text = "Заказы";
-            this.ordersButton.UseVisualStyleBackColor = false;
+            this.expensiveFirst.AutoSize = true;
+            this.expensiveFirst.Location = new System.Drawing.Point(81, 18);
+            this.expensiveFirst.Name = "expensiveFirst";
+            this.expensiveFirst.Size = new System.Drawing.Size(62, 17);
+            this.expensiveFirst.TabIndex = 1;
+            this.expensiveFirst.Text = "Больше";
+            this.expensiveFirst.UseVisualStyleBackColor = true;
+            // 
+            // cheapFirst
+            // 
+            this.cheapFirst.AutoSize = true;
+            this.cheapFirst.Checked = true;
+            this.cheapFirst.Location = new System.Drawing.Point(6, 18);
+            this.cheapFirst.Name = "cheapFirst";
+            this.cheapFirst.Size = new System.Drawing.Size(65, 17);
+            this.cheapFirst.TabIndex = 0;
+            this.cheapFirst.TabStop = true;
+            this.cheapFirst.Text = "Меньше";
+            this.cheapFirst.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 50);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(800, 306);
+            this.flowLayoutPanel.TabIndex = 1;
             // 
             // ProductListForm
             // 

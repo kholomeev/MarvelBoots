@@ -1,6 +1,7 @@
 namespace WindowsFormsApp.Models
 {
     using System;
+    using System.Linq;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
@@ -54,5 +55,63 @@ namespace WindowsFormsApp.Models
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ShoesSize> ShoesSize { get; set; }
+
+        /// <summary>
+        /// STUD
+        ///
+        /// Рассчитать цену товара (рубли) с учетом скидки: 25% на товары, на
+        /// которые не было заказов в апреле текущего года.
+        ///
+        /// </summary>
+        /// <returns>Decimal</returns>
+        public Decimal GetPrice()
+        {
+
+            int currentYear = DateTime.Now.Year;
+
+            bool hasSales = Program.context.OrderProduct.Count(op => op.ProductId == this.IdProduct &&
+                           op.Order.Date.Year == currentYear &&
+                           op.Order.Date.Month == 4) > 0; // STUD Апрель.
+
+            Decimal result = ProductPrice;
+
+            if (!hasSales)
+            {
+                result = Math.Round(ProductPrice * 0.75m, 2); // STUD Скидка 25 %.
+            }
+
+            return result;
+
+        }
+
+        /// <summary>
+        /// STUD
+        ///
+        /// Количество: «много», если более пяти единиц товарных
+        /// позиций и «мало», если менее или равно пяти.
+        ///
+        /// </summary>
+        ///
+        /// <returns>String</returns>
+        public string GetStock()
+        {
+            int stock = ShoesSize.Sum(p => p.PairQuantity);
+
+            string result = "";
+
+            if (stock > 5)
+            {
+                result = "Много";
+            }
+            else
+            {
+                result = "Мало";
+            }
+
+            return result;
+
+        }
+
+
     }
 }
