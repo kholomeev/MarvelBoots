@@ -25,12 +25,11 @@ namespace WindowsFormsApp.UserControls
         private void ShowInfo()
         {
             manufacturerLabel.Text = $"{_product.Manufacturer.ManufacturerName} | {_product.ProductName}";
-            categoryLabel.Text = $"Категория: {_product.Category}";
+            categoryLabel.Text = $"Категория: {_product.ShoesType}";
             stockLabel.Text = $"Количество: {_product.GetStock()}";
-            compositionLabel.Text = $"Состав: {_product.Сomposition}";
+            compositionLabel.Text = $"Состав: {_product.Composition}";
             priceLabel.Text = $"Цена:\n {_product.GetPrice()} руб.";
-            idLabel.Text = $"Id: {_product.IdProduct}";
-            throw new NotImplementedException();
+            idLabel.Text = $"Id: {_product.ProductId}";
         }
 
     }

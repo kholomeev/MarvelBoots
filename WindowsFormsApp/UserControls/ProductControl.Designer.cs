@@ -34,9 +34,9 @@
             this.compositionLabel = new System.Windows.Forms.Label();
             this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.idLabel = new System.Windows.Forms.Label();
             this.priceLabel = new System.Windows.Forms.Label();
-            this.IdLabel = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,12 +90,33 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.IdLabel);
+            this.panel1.Controls.Add(this.idLabel);
             this.panel1.Controls.Add(this.priceLabel);
             this.panel1.Location = new System.Drawing.Point(607, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(118, 121);
             this.panel1.TabIndex = 6;
+            // 
+            // idLabel
+            // 
+            this.idLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.idLabel.Location = new System.Drawing.Point(77, 105);
+            this.idLabel.Name = "idLabel";
+            this.idLabel.Size = new System.Drawing.Size(41, 16);
+            this.idLabel.TabIndex = 3;
+            this.idLabel.Text = "label1";
+            this.idLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // priceLabel
+            // 
+            this.priceLabel.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.priceLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.priceLabel.Location = new System.Drawing.Point(0, 0);
+            this.priceLabel.Name = "priceLabel";
+            this.priceLabel.Size = new System.Drawing.Size(118, 33);
+            this.priceLabel.TabIndex = 2;
+            this.priceLabel.Text = "label1";
+            this.priceLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
             // 
@@ -107,27 +128,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(454, 121);
             this.panel2.TabIndex = 7;
-            // 
-            // priceLabel
-            // 
-            this.priceLabel.Cursor = System.Windows.Forms.Cursors.No;
-            this.priceLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.priceLabel.Location = new System.Drawing.Point(0, 0);
-            this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(118, 33);
-            this.priceLabel.TabIndex = 2;
-            this.priceLabel.Text = "label1";
-            this.priceLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // IdLabel
-            // 
-            this.IdLabel.Cursor = System.Windows.Forms.Cursors.No;
-            this.IdLabel.Location = new System.Drawing.Point(77, 105);
-            this.IdLabel.Name = "IdLabel";
-            this.IdLabel.Size = new System.Drawing.Size(41, 16);
-            this.IdLabel.TabIndex = 3;
-            this.IdLabel.Text = "label1";
-            this.IdLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             // 
             // ProductControl
             // 
@@ -158,7 +158,7 @@
         private System.Windows.Forms.Label compositionLabel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label IdLabel;
+        private System.Windows.Forms.Label idLabel;
         private System.Windows.Forms.Label priceLabel;
     }
 }
