@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp.Constants;
 using WindowsFormsApp.Models;
 
 namespace WindowsFormsApp.UserControls
@@ -19,7 +20,17 @@ namespace WindowsFormsApp.UserControls
         {
             InitializeComponent();
             _product = product;
+
             ShowInfo();
+            HighlightRunningLow();
+        }
+
+        private void HighlightRunningLow()
+        {
+            if (_product.IsRunningLow())
+            {
+                this.BackColor = ColorTranslator.FromHtml(Constant.LightRed);
+            }
         }
 
         private void ShowInfo()
@@ -30,6 +41,7 @@ namespace WindowsFormsApp.UserControls
             compositionLabel.Text = $"Состав: {_product.Composition}";
             priceLabel.Text = $"Цена:\n {_product.GetPrice()} руб.";
             idLabel.Text = $"Id: {_product.ProductId}";
+            photoPictureBox.Image = _product.GetImage();
         }
 
     }

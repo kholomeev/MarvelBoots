@@ -4,8 +4,9 @@ namespace WindowsFormsApp.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+    using System.Drawing;
     using System.Linq;
+    using System.Windows.Forms;
 
     [Table("Product")]
     public partial class Product
@@ -109,7 +110,30 @@ namespace WindowsFormsApp.Models
             }
 
             return result;
+        }
 
+        /// <summary>
+        /// STUD
+        /// 
+        /// Использует изображение из пути, указанного в базе данных.
+        /// </summary>
+        /// <returns>Image</returns>
+        public Image GetImage()
+        {
+            String imgPath = System.IO.Path.Combine(Application.StartupPath, "img", Image);
+
+            Image img = System.Drawing.Image.FromFile(imgPath);
+
+            return img;
+        }
+
+        public bool IsRunningLow()
+        {
+            int stock = ShoesSize.Sum(p => p.PairQuantity);
+
+            bool result = stock <= 3;
+
+            return result;
         }
     }
 }
