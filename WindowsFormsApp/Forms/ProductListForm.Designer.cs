@@ -77,6 +77,7 @@
             this.ordersButton.TabIndex = 5;
             this.ordersButton.Text = "Заказы";
             this.ordersButton.UseVisualStyleBackColor = false;
+            this.ordersButton.Click += new System.EventHandler(this.ordersButton_Click);
             // 
             // textBox1
             // 
@@ -84,6 +85,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 21);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label3
             // 
@@ -107,6 +109,7 @@
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(121, 21);
             this.categoryComboBox.TabIndex = 2;
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -137,18 +140,20 @@
             this.expensiveFirst.TabIndex = 1;
             this.expensiveFirst.Text = "Больше";
             this.expensiveFirst.UseVisualStyleBackColor = true;
+            this.expensiveFirst.CheckedChanged += new System.EventHandler(this.expensiveFirst_CheckedChanged);
             // 
             // cheapFirst
             // 
             this.cheapFirst.AutoSize = true;
             this.cheapFirst.Checked = true;
-            this.cheapFirst.Location = new System.Drawing.Point(6, 18);
+            this.cheapFirst.Location = new System.Drawing.Point(10, 18);
             this.cheapFirst.Name = "cheapFirst";
             this.cheapFirst.Size = new System.Drawing.Size(65, 17);
             this.cheapFirst.TabIndex = 0;
             this.cheapFirst.TabStop = true;
             this.cheapFirst.Text = "Меньше";
             this.cheapFirst.UseVisualStyleBackColor = true;
+            this.cheapFirst.CheckedChanged += new System.EventHandler(this.cheapFirst_CheckedChanged);
             // 
             // flowLayoutPanel
             // 
