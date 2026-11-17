@@ -155,7 +155,7 @@
         private System.Windows.Forms.Label fullNameLabel;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label roleLabel;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.Label roleLabel;
     }
 }
