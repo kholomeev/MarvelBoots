@@ -12,5 +12,7 @@ namespace WindowsFormsApp.Constants
 
         public const string Cart = "Корзина";
         public const string Confirmed = "Подтвержден";
+
+        public const int LastOrderInClosedPeriod = 10
     }
 }
