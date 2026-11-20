@@ -51,6 +51,7 @@
             this.manufacturerLabel.TabIndex = 1;
             this.manufacturerLabel.Text = "label1";
             this.manufacturerLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.manufacturerLabel.Click += new System.EventHandler(this.categoryLabel_Click_1);
             // 
             // categoryLabel
             // 
@@ -60,6 +61,7 @@
             this.categoryLabel.Size = new System.Drawing.Size(35, 13);
             this.categoryLabel.TabIndex = 2;
             this.categoryLabel.Text = "label2";
+            this.categoryLabel.Click += new System.EventHandler(this.categoryLabel_Click_1);
             // 
             // stockLabel
             // 
@@ -69,6 +71,7 @@
             this.stockLabel.Size = new System.Drawing.Size(35, 13);
             this.stockLabel.TabIndex = 3;
             this.stockLabel.Text = "label3";
+            this.stockLabel.Click += new System.EventHandler(this.categoryLabel_Click_1);
             // 
             // compositionLabel
             // 
@@ -78,6 +81,7 @@
             this.compositionLabel.Size = new System.Drawing.Size(454, 62);
             this.compositionLabel.TabIndex = 4;
             this.compositionLabel.Text = "label4";
+            this.compositionLabel.Click += new System.EventHandler(this.categoryLabel_Click_1);
             // 
             // photoPictureBox
             // 
@@ -87,6 +91,7 @@
             this.photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.photoPictureBox.TabIndex = 0;
             this.photoPictureBox.TabStop = false;
+            this.photoPictureBox.Click += new System.EventHandler(this.categoryLabel_Click_1);
             // 
             // panel1
             // 
@@ -96,6 +101,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(118, 121);
             this.panel1.TabIndex = 6;
+            this.panel1.Click += new System.EventHandler(this.categoryLabel_Click_1);
             // 
             // idLabel
             // 
@@ -106,6 +112,7 @@
             this.idLabel.TabIndex = 3;
             this.idLabel.Text = "label1";
             this.idLabel.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.idLabel.Click += new System.EventHandler(this.categoryLabel_Click_1);
             // 
             // priceLabel
             // 
@@ -117,6 +124,7 @@
             this.priceLabel.TabIndex = 2;
             this.priceLabel.Text = "label1";
             this.priceLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.priceLabel.Click += new System.EventHandler(this.categoryLabel_Click_1);
             // 
             // panel2
             // 
@@ -128,6 +136,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(454, 121);
             this.panel2.TabIndex = 7;
+            this.panel2.Click += new System.EventHandler(this.categoryLabel_Click_1);
             // 
             // ProductControl
             // 
@@ -141,6 +150,7 @@
             this.Margin = new System.Windows.Forms.Padding(20, 0, 20, 20);
             this.Name = "ProductControl";
             this.Size = new System.Drawing.Size(740, 158);
+            this.Click += new System.EventHandler(this.categoryLabel_Click_1);
             ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

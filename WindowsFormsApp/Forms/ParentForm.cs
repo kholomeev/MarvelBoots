@@ -46,11 +46,6 @@ namespace WindowsFormsApp.Forms
                 fullNameLabel.Text = $"{UserSession.User}";
                 roleLabel.Text = UserSession.User.UserRole;
             }
-
-            if (roleLabel.Text != "Гость")
-            {
-                pictureBox2.Visible = true;
-            }
         }
 
         private void ParentForm_Load(object sender, EventArgs e)

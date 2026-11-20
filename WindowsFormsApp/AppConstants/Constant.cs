@@ -9,5 +9,8 @@ namespace WindowsFormsApp.Constants
     class Constant
     {
         public const string LightRed = "#FF8080";
+
+        public const string Cart = "Корзина";
+        public const string Confirmed = "Подтвержден";
     }
 }

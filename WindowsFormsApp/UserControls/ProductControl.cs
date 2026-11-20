@@ -9,7 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp.Constants;
+using WindowsFormsApp.Forms;
 using WindowsFormsApp.Models;
+using WindowsFormsApp.Services;
 
 namespace WindowsFormsApp.UserControls
 {
@@ -35,7 +37,7 @@ namespace WindowsFormsApp.UserControls
 
         private void ShowInfo()
         {
-            manufacturerLabel.Text = $"{_product.Manufacturer.ManufacturerName} | {_product.ProductName}";
+            manufacturerLabel.Text = $"{_product.Manufacturer.ManufacturerName}";
             categoryLabel.Text = $"Категория: {_product.ShoesType}";
             stockLabel.Text = $"Количество: {_product.GetStock()}";
             compositionLabel.Text = $"Состав: {_product.Composition}";
@@ -44,5 +46,14 @@ namespace WindowsFormsApp.UserControls
             photoPictureBox.Image = _product.GetImage();
         }
 
+        private void categoryLabel_Click_1(object sender, EventArgs e)
+        {
+            ProductListForm currentForm = (ProductListForm)this.Parent.Parent.Parent.Parent;
+
+            var whereTo = new ProductDetailForm();
+            whereTo.EntityId = _product.ProductId;
+
+            FormManager.NavigateTo(whereTo, currentForm);
+        }
     }
 }

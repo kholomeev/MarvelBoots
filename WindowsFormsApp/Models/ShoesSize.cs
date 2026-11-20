@@ -23,5 +23,15 @@ namespace WindowsFormsApp.Models
         public int PairQuantity { get; set; }
 
         public virtual Product Product { get; set; }
+
+        // STUD {
+
+        public override string ToString()
+        {
+            return $"Размер: {Size}, остаток: {PairQuantity}";
+        }
+
+        // } STUD
+
     }
 }

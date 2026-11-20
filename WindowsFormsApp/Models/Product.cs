@@ -135,5 +135,13 @@ namespace WindowsFormsApp.Models
 
             return result;
         }
+
+        public string GetSizeRange()
+        {
+            List<decimal> sizes = this.ShoesSize.Select(ps => ps.Size).ToList();
+
+            return String.Join(", ", sizes);
+        }
+
     }
 }

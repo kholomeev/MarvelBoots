@@ -62,16 +62,11 @@ namespace WindowsFormsApp.Forms
                 tmpProducts = tmpProducts.Where(p => p.ShoesType == categoryInput);
             }
 
-            if (!cheapFirstInput)
-            {
-                tmpProducts = tmpProducts.OrderByDescending(p => p.Price);
-            }
-            else
-            {
-                tmpProducts = tmpProducts.OrderBy(p => p.Price);
-            }
-
             _products = tmpProducts.ToList();
+
+            _products = cheapFirstInput ?
+                _products.OrderBy(p => p.GetPrice()).ToList() :
+                _products.OrderByDescending(p => p.GetPrice()).ToList();
         }
 
         private void ShowProducts()
