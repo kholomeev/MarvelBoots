@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
-            this.ordersButton = new System.Windows.Forms.Button();
+            this.OrderButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
@@ -55,7 +55,7 @@
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.ordersButton);
+            this.panel.Controls.Add(this.OrderButton);
             this.panel.Controls.Add(this.textBox1);
             this.panel.Controls.Add(this.label3);
             this.panel.Controls.Add(this.categoryComboBox);
@@ -67,17 +67,17 @@
             this.panel.Size = new System.Drawing.Size(800, 50);
             this.panel.TabIndex = 0;
             // 
-            // ordersButton
+            // OrderButton
             // 
-            this.ordersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
-            this.ordersButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ordersButton.Location = new System.Drawing.Point(705, 14);
-            this.ordersButton.Name = "ordersButton";
-            this.ordersButton.Size = new System.Drawing.Size(75, 23);
-            this.ordersButton.TabIndex = 5;
-            this.ordersButton.Text = "Заказы";
-            this.ordersButton.UseVisualStyleBackColor = false;
-            this.ordersButton.Click += new System.EventHandler(this.ordersButton_Click);
+            this.OrderButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(178)))), ((int)(((byte)(175)))));
+            this.OrderButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OrderButton.Location = new System.Drawing.Point(705, 14);
+            this.OrderButton.Name = "OrderButton";
+            this.OrderButton.Size = new System.Drawing.Size(75, 23);
+            this.OrderButton.TabIndex = 5;
+            this.OrderButton.Text = "Заказы";
+            this.OrderButton.UseVisualStyleBackColor = false;
+            this.OrderButton.Click += new System.EventHandler(this.OrderButton_Click);
             // 
             // textBox1
             // 
@@ -194,6 +194,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton expensiveFirst;
         private System.Windows.Forms.RadioButton cheapFirst;
-        private System.Windows.Forms.Button ordersButton;
+        private System.Windows.Forms.Button OrderButton;
     }
 }

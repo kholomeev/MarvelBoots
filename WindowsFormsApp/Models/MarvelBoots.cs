@@ -8,22 +8,22 @@ namespace WindowsFormsApp.Models
     public partial class MarvelBoots : DbContext
     {
         public MarvelBoots()
-            : base("name=MarvelBoots1")
+            : base("name=MarvelBoots")
         {
         }
 
         public virtual DbSet<Manufacturer> Manufacturer { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
         public virtual DbSet<OrderProduct> OrderProduct { get; set; }
-        public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<ShoesSize> ShoesSize { get; set; }
         public virtual DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Orders>()
+            modelBuilder.Entity<Order>()
                 .HasMany(e => e.OrderProduct)
-                .WithRequired(e => e.Orders)
+                .WithRequired(e => e.Order)
                 .HasForeignKey(e => e.IdOrder)
                 .WillCascadeOnDelete(false);
 
@@ -38,7 +38,7 @@ namespace WindowsFormsApp.Models
                 .HasPrecision(18, 1);
 
             modelBuilder.Entity<User>()
-                .HasMany(e => e.Orders)
+                .HasMany(e => e.Order)
                 .WithRequired(e => e.User)
                 .HasForeignKey(e => e.UserId);
         }

@@ -145,3 +145,4 @@ C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsAp
 C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.Forms.OrdersForm.resources
 C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.Forms.OrderAddUpdateForm.resources
 C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.Forms.ProductDetailForm.resources
+C:\Users\260-23\Downloads\WindowsFormsApp-NetFramework-EF6-MsTest\WindowsFormsApp\obj\Debug\WindowsFormsApp.Forms.OrderForm.resources

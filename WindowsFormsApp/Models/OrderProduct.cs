@@ -16,7 +16,7 @@ namespace WindowsFormsApp.Models
 
         public int IdProduct { get; set; }
 
-        public virtual Orders Orders { get; set; }
+        public virtual Order Order { get; set; }
 
         public virtual Product Product { get; set; }
     }

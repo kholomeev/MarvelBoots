@@ -97,9 +97,9 @@ namespace WindowsFormsApp.Forms
             RefreshList();
         }
 
-        private void ordersButton_Click(object sender, EventArgs e)
+        private void OrderButton_Click(object sender, EventArgs e)
         {
-            FormManager.NavigateTo(new OrdersForm(), this);
+            FormManager.NavigateTo(new OrderForm(), this);
         }
     }
 }

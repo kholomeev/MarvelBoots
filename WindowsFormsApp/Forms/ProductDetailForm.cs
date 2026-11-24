@@ -66,7 +66,7 @@ namespace WindowsFormsApp.Forms
             decimal size = ((ShoesSize)sizeComboBox.SelectedItem).Size;
             int amount = (int)amointNumericUpDown.Value;
             // STUD Получить корзину (заказ в статусе корзина).
-            Orders cart = OrderManager.GetOrCreateCart();
+            Order cart = OrderManager.GetOrCreateCart();
             try
             {
                 // STUD Валидация(вдруг нехватка товара данного размера)

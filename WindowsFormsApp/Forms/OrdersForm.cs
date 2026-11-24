@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp.Forms
 {
-    public partial class OrdersForm : ParentForm
+    public partial class OrderForm : ParentForm
     {
-        public OrdersForm()
+        public OrderForm()
         {
             InitializeComponent();
         }
 
-        private void OrdersForm_Load(object sender, EventArgs e)
+        private void OrderForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "holomeev_marvelbootsDataSet.User". При необходимости она может быть перемещена или удалена.
             this.userTableAdapter.Fill(this.holomeev_marvelbootsDataSet.User);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "holomeev_marvelbootsDataSet.Orders". При необходимости она может быть перемещена или удалена.
-            this.ordersTableAdapter.Fill(this.holomeev_marvelbootsDataSet.Orders);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "holomeev_marvelbootsDataSet.Order". При необходимости она может быть перемещена или удалена.
+            this.OrderTableAdapter.Fill(this.holomeev_marvelbootsDataSet.Order);
 
         }
     }

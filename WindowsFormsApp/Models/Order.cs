@@ -6,15 +6,15 @@ namespace WindowsFormsApp.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Orders
+    [Table("Order")]
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Orders()
+        public Order()
         {
             OrderProduct = new HashSet<OrderProduct>();
         }
 
-        [Key]
         public int OrderId { get; set; }
 
         [Column(TypeName = "date")]
@@ -27,6 +27,9 @@ namespace WindowsFormsApp.Models
         public int Quantity { get; set; }
 
         public int Price { get; set; }
+
+        [StringLength(50)]
+        public string Status { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }

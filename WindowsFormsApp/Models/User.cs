@@ -12,7 +12,7 @@ namespace WindowsFormsApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            Orders = new HashSet<Orders>();
+            Order = new HashSet<Order>();
         }
 
         [Key]
@@ -39,30 +39,6 @@ namespace WindowsFormsApp.Models
         public string UserRole { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders> Orders { get; set; }
-
-        // STUD {
-
-        public override string ToString()
-        {
-            return $"{LastName} {Name} {PatronymicName}";
-        }
-
-        public bool IsAdmin()
-        {
-            return UserRole == "Администратор";
-        }
-
-        public bool IsManager()
-        {
-            return UserRole == "Менеджер";
-        }
-
-        internal bool IsClient()
-        {
-            return UserRole == "Авторизованный пользователь";
-        }
-
-        // } STUD
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

@@ -219,8 +219,8 @@
     </Compile>
     <Compile Include="Models\Manufacturer.cs" />
     <Compile Include="Models\MarvelBoots.cs" />
+    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderProduct.cs" />
-    <Compile Include="Models\Orders.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ShoesSize.cs" />
     <Compile Include="Models\User.cs" />
@@ -298,9 +298,7 @@
     <Analyzer Include="..\packages\MSTest.Analyzers.4.0.1\analyzers\dotnet\cs\MSTest.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\MSTest.Analyzers.4.0.1\analyzers\dotnet\cs\MSTest.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Exceptions\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Docs\script.sql" />
     <None Include="Resources\cart.png" />

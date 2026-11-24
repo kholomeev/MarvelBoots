@@ -57,6 +57,7 @@ namespace WindowsFormsApp.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ShoesSize> ShoesSize { get; set; }
 
+
         /// <summary>
         /// STUD
         ///
@@ -71,8 +72,8 @@ namespace WindowsFormsApp.Models
             int currentYear = DateTime.Now.Year;
 
             bool hasSales = Program.context.OrderProduct.Count(op => op.IdProduct == this.ProductId &&
-                           op.Orders.OrderDate.Year == currentYear &&
-                           op.Orders.OrderDate.Month == 4) > 0; // STUD Апрель.
+                           op.Order.OrderDate.Year == currentYear &&
+                           op.Order.OrderDate.Month == 4) > 0; // STUD Апрель.
 
             Decimal result = Price;
 
