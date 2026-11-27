@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp.Models;
 using WindowsFormsApp.Services;
 
 namespace WindowsFormsApp.Forms
@@ -43,7 +44,7 @@ namespace WindowsFormsApp.Forms
         {
             if (UserSession.User != null)
             {
-                fullNameLabel.Text = $"{UserSession.User}";
+                fullNameLabel.Text = $"{UserSession.User.LastName} {UserSession.User.Name} {UserSession.User.PatronymicName}";
                 roleLabel.Text = UserSession.User.UserRole;
             }
         }
@@ -51,6 +52,22 @@ namespace WindowsFormsApp.Forms
         private void ParentForm_Load(object sender, EventArgs e)
         {
             ShowUser();
+            ShowCartIcon();
+        }
+
+        private void ShowCartIcon()
+        {
+            pictureBox2.Visible = OrderManager.CartExists();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Order cart = OrderManager.GetCart();
+
+            OrderDetailForm detailForm = new OrderDetailForm();
+            detailForm.EntityId = cart.OrderId;
+
+            FormManager.NavigateTo(detailForm, this);
         }
     }
 }

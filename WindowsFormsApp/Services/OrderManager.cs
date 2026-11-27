@@ -14,7 +14,7 @@ namespace WindowsFormsApp.Services
             return UserSession.User;
         }
 
-        public static Order GetCart(User user)
+        public static Order GetCart()
         {
             var cartOwner = GetCartOwner();
             if (cartOwner == null)
@@ -39,17 +39,28 @@ namespace WindowsFormsApp.Services
             return order;
         }
 
-        internal static void CreateOrUpdateOrderProduct(Product product, decimal size, int amount)
+        public static  bool CartExists()
+        {
+            // STUD У текущего пользователя информационной системы
+            // есть доступ к корзине?
+            Order cart = GetCart();
+
+            bool cartExists = cart != null;
+
+            return cartExists;
+        }
+
+        internal static void CreateOrUpdateOrderProduct(Product product, decimal size, int amount) 
         {
             // STUD Консолидировать заказ: при совпадении товара
             // и размера не создавать новую запись в таблице, а добавить к существующей.
             Order cart = GetCart();
 
-            Order existing = cart.OrderProduct.Where(op => op.Product.ProductId == product.ProductId && op.Order.ShoesSize == size).FirstOrDefault();
+            OrderProduct existing = cart.OrderProduct.Where(op => op.IdProduct == product.ProductId && op.Size == size).FirstOrDefault();
 
             if (existing != null)
             {
-                
+                existing.Amount += amount;
             }
             else
             {

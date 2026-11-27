@@ -10,5 +10,6 @@ namespace WindowsFormsApp.Services
     internal class UserSession
     {
         public static User User;
+        public static User CartUser;
     }
 }

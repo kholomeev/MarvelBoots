@@ -27,6 +27,14 @@ namespace WindowsFormsApp.Models
                 .HasForeignKey(e => e.IdOrder)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<OrderProduct>()
+                .Property(e => e.Size)
+                .HasPrecision(18, 1);
+
+            modelBuilder.Entity<OrderProduct>()
+                .Property(e => e.OrderProductPrice)
+                .HasPrecision(18, 1);
+
             modelBuilder.Entity<Product>()
                 .HasMany(e => e.OrderProduct)
                 .WithRequired(e => e.Product)

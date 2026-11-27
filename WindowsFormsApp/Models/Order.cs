@@ -5,6 +5,8 @@ namespace WindowsFormsApp.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Linq;
+    using Microsoft.Graph.Drives.Item.Items.Item.Workbook.Functions.AmorDegrc;
 
     [Table("Order")]
     public partial class Order
@@ -22,12 +24,6 @@ namespace WindowsFormsApp.Models
 
         public int UserId { get; set; }
 
-        public int ShoesSize { get; set; }
-
-        public int Quantity { get; set; }
-
-        public int Price { get; set; }
-
         [StringLength(50)]
         public string Status { get; set; }
 
@@ -35,5 +31,13 @@ namespace WindowsFormsApp.Models
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
 
         public virtual User User { get; set; }
+
+        // STUD {
+        public Decimal GrandTotal()
+        {
+            return this.OrderProduct.Sum(op => op.Amount * op.OrderProductPrice);
+        }
+
+        // } STUD
     }
 }

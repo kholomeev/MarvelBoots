@@ -18,7 +18,7 @@ namespace WindowsFormsApp.Services
             // STUD Получаем корзину.
             Order cart = OrderManager.GetCart();
             // STUD Суммируем, сколько этого товара/размера уже в корзине.
-            int cartAmount = cart.OrderProduct.Where(op => op.IdProduct == idProduct && op.Order.ShoesSize == size).Sum(op => op.Order.Quantity);
+            int cartAmount = cart.OrderProduct.Where(op => op.IdProduct == idProduct && op.Size == size).Sum(op => op.Amount);
             // STUD Определяем, сколько этого товара/размера покупатель желает купить.
             int toBeOrdered = cartAmount + amount;
             // STUD Сверяем с остатком.

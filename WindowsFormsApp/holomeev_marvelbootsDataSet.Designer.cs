@@ -36,9 +36,9 @@ namespace WindowsFormsApp {
         
         private UserDataTable tableUser;
         
-        private global::System.Data.DataRelation relationFK_Order_User;
+        private global::System.Data.DataRelation relationFK_Orders_User;
         
-        private global::System.Data.DataRelation relationFK_OrderProduct_Order;
+        private global::System.Data.DataRelation relationFK_OrderProduct_Orders;
         
         private global::System.Data.DataRelation relationFK_OrderProduct_Product;
         
@@ -324,8 +324,8 @@ namespace WindowsFormsApp {
                     this.tableUser.InitVars();
                 }
             }
-            this.relationFK_Order_User = this.Relations["FK_Order_User"];
-            this.relationFK_OrderProduct_Order = this.Relations["FK_OrderProduct_Order"];
+            this.relationFK_Orders_User = this.Relations["FK_Orders_User"];
+            this.relationFK_OrderProduct_Orders = this.Relations["FK_OrderProduct_Orders"];
             this.relationFK_OrderProduct_Product = this.Relations["FK_OrderProduct_Product"];
             this.relationFK_Product_Manufacturer = this.Relations["FK_Product_Manufacturer"];
             this.relationFK_ShoesSize_Product = this.Relations["FK_ShoesSize_Product"];
@@ -351,14 +351,14 @@ namespace WindowsFormsApp {
             base.Tables.Add(this.tableShoesSize);
             this.tableUser = new UserDataTable();
             base.Tables.Add(this.tableUser);
-            this.relationFK_Order_User = new global::System.Data.DataRelation("FK_Order_User", new global::System.Data.DataColumn[] {
+            this.relationFK_Orders_User = new global::System.Data.DataRelation("FK_Orders_User", new global::System.Data.DataColumn[] {
                         this.tableUser.IdUserColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrder.UserIdColumn}, false);
-            this.Relations.Add(this.relationFK_Order_User);
-            this.relationFK_OrderProduct_Order = new global::System.Data.DataRelation("FK_OrderProduct_Order", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK_Orders_User);
+            this.relationFK_OrderProduct_Orders = new global::System.Data.DataRelation("FK_OrderProduct_Orders", new global::System.Data.DataColumn[] {
                         this.tableOrder.OrderIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrderProduct.IdOrderColumn}, false);
-            this.Relations.Add(this.relationFK_OrderProduct_Order);
+            this.Relations.Add(this.relationFK_OrderProduct_Orders);
             this.relationFK_OrderProduct_Product = new global::System.Data.DataRelation("FK_OrderProduct_Product", new global::System.Data.DataColumn[] {
                         this.tableProduct.ProductIdColumn}, new global::System.Data.DataColumn[] {
                         this.tableOrderProduct.IdProductColumn}, false);
@@ -773,12 +773,6 @@ namespace WindowsFormsApp {
             
             private global::System.Data.DataColumn columnUserId;
             
-            private global::System.Data.DataColumn columnShoesSize;
-            
-            private global::System.Data.DataColumn columnQuantity;
-            
-            private global::System.Data.DataColumn columnPrice;
-            
             private global::System.Data.DataColumn columnStatus;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -840,30 +834,6 @@ namespace WindowsFormsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn ShoesSizeColumn {
-                get {
-                    return this.columnShoesSize;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn QuantityColumn {
-                get {
-                    return this.columnQuantity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn PriceColumn {
-                get {
-                    return this.columnPrice;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn StatusColumn {
                 get {
                     return this.columnStatus;
@@ -907,18 +877,15 @@ namespace WindowsFormsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public OrderRow AddOrderRow(System.DateTime OrderDate, UserRow parentUserRowByFK_Order_User, int ShoesSize, int Quantity, int Price, string Status) {
+            public OrderRow AddOrderRow(System.DateTime OrderDate, UserRow parentUserRowByFK_Orders_User, string Status) {
                 OrderRow rowOrderRow = ((OrderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         OrderDate,
                         null,
-                        ShoesSize,
-                        Quantity,
-                        Price,
                         Status};
-                if ((parentUserRowByFK_Order_User != null)) {
-                    columnValuesArray[2] = parentUserRowByFK_Order_User[0];
+                if ((parentUserRowByFK_Orders_User != null)) {
+                    columnValuesArray[2] = parentUserRowByFK_Orders_User[0];
                 }
                 rowOrderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowOrderRow);
@@ -952,9 +919,6 @@ namespace WindowsFormsApp {
                 this.columnOrderId = base.Columns["OrderId"];
                 this.columnOrderDate = base.Columns["OrderDate"];
                 this.columnUserId = base.Columns["UserId"];
-                this.columnShoesSize = base.Columns["ShoesSize"];
-                this.columnQuantity = base.Columns["Quantity"];
-                this.columnPrice = base.Columns["Price"];
                 this.columnStatus = base.Columns["Status"];
             }
             
@@ -967,12 +931,6 @@ namespace WindowsFormsApp {
                 base.Columns.Add(this.columnOrderDate);
                 this.columnUserId = new global::System.Data.DataColumn("UserId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUserId);
-                this.columnShoesSize = new global::System.Data.DataColumn("ShoesSize", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShoesSize);
-                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnQuantity);
-                this.columnPrice = new global::System.Data.DataColumn("Price", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrice);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
@@ -985,9 +943,6 @@ namespace WindowsFormsApp {
                 this.columnOrderId.Unique = true;
                 this.columnOrderDate.AllowDBNull = false;
                 this.columnUserId.AllowDBNull = false;
-                this.columnShoesSize.AllowDBNull = false;
-                this.columnQuantity.AllowDBNull = false;
-                this.columnPrice.AllowDBNull = false;
                 this.columnStatus.MaxLength = 50;
             }
             
@@ -1128,6 +1083,12 @@ namespace WindowsFormsApp {
             
             private global::System.Data.DataColumn columnIdProduct;
             
+            private global::System.Data.DataColumn columnSize;
+            
+            private global::System.Data.DataColumn columnAmount;
+            
+            private global::System.Data.DataColumn columnOrderProductPrice;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public OrderProductDataTable() {
@@ -1187,6 +1148,30 @@ namespace WindowsFormsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SizeColumn {
+                get {
+                    return this.columnSize;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AmountColumn {
+                get {
+                    return this.columnAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn OrderProductPriceColumn {
+                get {
+                    return this.columnOrderProductPrice;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1222,14 +1207,17 @@ namespace WindowsFormsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public OrderProductRow AddOrderProductRow(OrderRow parentOrderRowByFK_OrderProduct_Order, ProductRow parentProductRowByFK_OrderProduct_Product) {
+            public OrderProductRow AddOrderProductRow(OrderRow parentOrderRowByFK_OrderProduct_Orders, ProductRow parentProductRowByFK_OrderProduct_Product, decimal Size, int Amount, decimal OrderProductPrice) {
                 OrderProductRow rowOrderProductRow = ((OrderProductRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        null};
-                if ((parentOrderRowByFK_OrderProduct_Order != null)) {
-                    columnValuesArray[1] = parentOrderRowByFK_OrderProduct_Order[0];
+                        null,
+                        Size,
+                        Amount,
+                        OrderProductPrice};
+                if ((parentOrderRowByFK_OrderProduct_Orders != null)) {
+                    columnValuesArray[1] = parentOrderRowByFK_OrderProduct_Orders[0];
                 }
                 if ((parentProductRowByFK_OrderProduct_Product != null)) {
                     columnValuesArray[2] = parentProductRowByFK_OrderProduct_Product[0];
@@ -1266,6 +1254,9 @@ namespace WindowsFormsApp {
                 this.columnIdOrderProduct = base.Columns["IdOrderProduct"];
                 this.columnIdOrder = base.Columns["IdOrder"];
                 this.columnIdProduct = base.Columns["IdProduct"];
+                this.columnSize = base.Columns["Size"];
+                this.columnAmount = base.Columns["Amount"];
+                this.columnOrderProductPrice = base.Columns["OrderProductPrice"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1277,6 +1268,12 @@ namespace WindowsFormsApp {
                 base.Columns.Add(this.columnIdOrder);
                 this.columnIdProduct = new global::System.Data.DataColumn("IdProduct", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdProduct);
+                this.columnSize = new global::System.Data.DataColumn("Size", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSize);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmount);
+                this.columnOrderProductPrice = new global::System.Data.DataColumn("OrderProductPrice", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOrderProductPrice);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdOrderProduct}, true));
                 this.columnIdOrderProduct.AutoIncrement = true;
@@ -1287,6 +1284,9 @@ namespace WindowsFormsApp {
                 this.columnIdOrderProduct.Unique = true;
                 this.columnIdOrder.AllowDBNull = false;
                 this.columnIdProduct.AllowDBNull = false;
+                this.columnSize.AllowDBNull = false;
+                this.columnAmount.AllowDBNull = false;
+                this.columnOrderProductPrice.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2565,39 +2565,6 @@ namespace WindowsFormsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int ShoesSize {
-                get {
-                    return ((int)(this[this.tableOrder.ShoesSizeColumn]));
-                }
-                set {
-                    this[this.tableOrder.ShoesSizeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Quantity {
-                get {
-                    return ((int)(this[this.tableOrder.QuantityColumn]));
-                }
-                set {
-                    this[this.tableOrder.QuantityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Price {
-                get {
-                    return ((int)(this[this.tableOrder.PriceColumn]));
-                }
-                set {
-                    this[this.tableOrder.PriceColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Status {
                 get {
                     try {
@@ -2616,10 +2583,10 @@ namespace WindowsFormsApp {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public UserRow UserRow {
                 get {
-                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["FK_Order_User"])));
+                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["FK_Orders_User"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Order_User"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Orders_User"]);
                 }
             }
             
@@ -2638,11 +2605,11 @@ namespace WindowsFormsApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public OrderProductRow[] GetOrderProductRows() {
-                if ((this.Table.ChildRelations["FK_OrderProduct_Order"] == null)) {
+                if ((this.Table.ChildRelations["FK_OrderProduct_Orders"] == null)) {
                     return new OrderProductRow[0];
                 }
                 else {
-                    return ((OrderProductRow[])(base.GetChildRows(this.Table.ChildRelations["FK_OrderProduct_Order"])));
+                    return ((OrderProductRow[])(base.GetChildRows(this.Table.ChildRelations["FK_OrderProduct_Orders"])));
                 }
             }
         }
@@ -2696,12 +2663,45 @@ namespace WindowsFormsApp {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public OrderRow OrderRow {
+            public decimal Size {
                 get {
-                    return ((OrderRow)(this.GetParentRow(this.Table.ParentRelations["FK_OrderProduct_Order"])));
+                    return ((decimal)(this[this.tableOrderProduct.SizeColumn]));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_OrderProduct_Order"]);
+                    this[this.tableOrderProduct.SizeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Amount {
+                get {
+                    return ((int)(this[this.tableOrderProduct.AmountColumn]));
+                }
+                set {
+                    this[this.tableOrderProduct.AmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal OrderProductPrice {
+                get {
+                    return ((decimal)(this[this.tableOrderProduct.OrderProductPriceColumn]));
+                }
+                set {
+                    this[this.tableOrderProduct.OrderProductPriceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public OrderRow OrderRow {
+                get {
+                    return ((OrderRow)(this.GetParentRow(this.Table.ParentRelations["FK_OrderProduct_Orders"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_OrderProduct_Orders"]);
                 }
             }
             
@@ -3028,11 +3028,11 @@ namespace WindowsFormsApp {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public OrderRow[] GetOrderRows() {
-                if ((this.Table.ChildRelations["FK_Order_User"] == null)) {
+                if ((this.Table.ChildRelations["FK_Orders_User"] == null)) {
                     return new OrderRow[0];
                 }
                 else {
-                    return ((OrderRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Order_User"])));
+                    return ((OrderRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Orders_User"])));
                 }
             }
         }
@@ -3687,51 +3687,39 @@ SELECT ManufacturerId, ManufacturerName FROM Manufacturer WHERE (ManufacturerId 
             tableMapping.ColumnMappings.Add("OrderId", "OrderId");
             tableMapping.ColumnMappings.Add("OrderDate", "OrderDate");
             tableMapping.ColumnMappings.Add("UserId", "UserId");
-            tableMapping.ColumnMappings.Add("ShoesSize", "ShoesSize");
-            tableMapping.ColumnMappings.Add("Quantity", "Quantity");
-            tableMapping.ColumnMappings.Add("Price", "Price");
             tableMapping.ColumnMappings.Add("Status", "Status");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Order] WHERE (([OrderId] = @Original_OrderId) AND ([OrderDate] = @Original_OrderDate) AND ([UserId] = @Original_UserId) AND ([ShoesSize] = @Original_ShoesSize) AND ([Quantity] = @Original_Quantity) AND ([Price] = @Original_Price) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Order] WHERE (([OrderId] = @Original_OrderId) AND ([OrderDate]" +
+                " = @Original_OrderDate) AND ([UserId] = @Original_UserId) AND ((@IsNull_Status =" +
+                " 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShoesSize", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShoesSize", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Order] ([OrderDate], [UserId], [ShoesSize], [Quantity], [Price], [Status]) VALUES (@OrderDate, @UserId, @ShoesSize, @Quantity, @Price, @Status);
-SELECT OrderId, OrderDate, UserId, ShoesSize, Quantity, Price, Status FROM [Order] WHERE (OrderId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Order] ([OrderDate], [UserId], [Status]) VALUES (@OrderDate, @" +
+                "UserId, @Status);\r\nSELECT OrderId, OrderDate, UserId, Status FROM [Order] WHERE " +
+                "(OrderId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShoesSize", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShoesSize", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Order] SET [OrderDate] = @OrderDate, [UserId] = @UserId, [ShoesSize] = @ShoesSize, [Quantity] = @Quantity, [Price] = @Price, [Status] = @Status WHERE (([OrderId] = @Original_OrderId) AND ([OrderDate] = @Original_OrderDate) AND ([UserId] = @Original_UserId) AND ([ShoesSize] = @Original_ShoesSize) AND ([Quantity] = @Original_Quantity) AND ([Price] = @Original_Price) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)));
-SELECT OrderId, OrderDate, UserId, ShoesSize, Quantity, Price, Status FROM [Order] WHERE (OrderId = @OrderId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Order] SET [OrderDate] = @OrderDate, [UserId] = @UserId, [Status] = @Status WHERE (([OrderId] = @Original_OrderId) AND ([OrderDate] = @Original_OrderDate) AND ([UserId] = @Original_UserId) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)));
+SELECT OrderId, OrderDate, UserId, Status FROM [Order] WHERE (OrderId = @OrderId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShoesSize", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShoesSize", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderDate", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "OrderDate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShoesSize", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShoesSize", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Status", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Status", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Status", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "OrderId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3750,8 +3738,7 @@ SELECT OrderId, OrderDate, UserId, ShoesSize, Quantity, Price, Status FROM [Orde
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT OrderId, OrderDate, UserId, ShoesSize, Quantity, Price, Status FROM dbo.[O" +
-                "rder]";
+            this._commandCollection[0].CommandText = "SELECT OrderId, OrderDate, UserId, Status FROM dbo.[Order]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3812,20 +3799,17 @@ SELECT OrderId, OrderDate, UserId, ShoesSize, Quantity, Price, Status FROM [Orde
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_OrderId, System.DateTime Original_OrderDate, int Original_UserId, int Original_ShoesSize, int Original_Quantity, int Original_Price, string Original_Status) {
+        public virtual int Delete(int Original_OrderId, System.DateTime Original_OrderDate, int Original_UserId, string Original_Status) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_OrderId));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_OrderDate));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_UserId));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_ShoesSize));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Quantity));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Price));
             if ((Original_Status == null)) {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Status));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Status));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3847,17 +3831,14 @@ SELECT OrderId, OrderDate, UserId, ShoesSize, Quantity, Price, Status FROM [Orde
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(System.DateTime OrderDate, int UserId, int ShoesSize, int Quantity, int Price, string Status) {
+        public virtual int Insert(System.DateTime OrderDate, int UserId, string Status) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(OrderDate));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(UserId));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(ShoesSize));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Quantity));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Price));
             if ((Status == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Status));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Status));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3879,33 +3860,27 @@ SELECT OrderId, OrderDate, UserId, ShoesSize, Quantity, Price, Status FROM [Orde
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime OrderDate, int UserId, int ShoesSize, int Quantity, int Price, string Status, int Original_OrderId, System.DateTime Original_OrderDate, int Original_UserId, int Original_ShoesSize, int Original_Quantity, int Original_Price, string Original_Status, int OrderId) {
+        public virtual int Update(System.DateTime OrderDate, int UserId, string Status, int Original_OrderId, System.DateTime Original_OrderDate, int Original_UserId, string Original_Status, int OrderId) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(OrderDate));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(UserId));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(ShoesSize));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Quantity));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Price));
             if ((Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Status));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Status));
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_OrderId));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_OrderDate));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_UserId));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ShoesSize));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Quantity));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_Price));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_OrderId));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Original_OrderDate));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_UserId));
             if ((Original_Status == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Status));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_Status));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(OrderId));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(OrderId));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3926,8 +3901,8 @@ SELECT OrderId, OrderDate, UserId, ShoesSize, Quantity, Price, Status FROM [Orde
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(System.DateTime OrderDate, int UserId, int ShoesSize, int Quantity, int Price, string Status, int Original_OrderId, System.DateTime Original_OrderDate, int Original_UserId, int Original_ShoesSize, int Original_Quantity, int Original_Price, string Original_Status) {
-            return this.Update(OrderDate, UserId, ShoesSize, Quantity, Price, Status, Original_OrderId, Original_OrderDate, Original_UserId, Original_ShoesSize, Original_Quantity, Original_Price, Original_Status, Original_OrderId);
+        public virtual int Update(System.DateTime OrderDate, int UserId, string Status, int Original_OrderId, System.DateTime Original_OrderDate, int Original_UserId, string Original_Status) {
+            return this.Update(OrderDate, UserId, Status, Original_OrderId, Original_OrderDate, Original_UserId, Original_Status, Original_OrderId);
         }
     }
     
@@ -4055,34 +4030,46 @@ SELECT OrderId, OrderDate, UserId, ShoesSize, Quantity, Price, Status FROM [Orde
             tableMapping.ColumnMappings.Add("IdOrderProduct", "IdOrderProduct");
             tableMapping.ColumnMappings.Add("IdOrder", "IdOrder");
             tableMapping.ColumnMappings.Add("IdProduct", "IdProduct");
+            tableMapping.ColumnMappings.Add("Size", "Size");
+            tableMapping.ColumnMappings.Add("Amount", "Amount");
+            tableMapping.ColumnMappings.Add("OrderProductPrice", "OrderProductPrice");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[OrderProduct] WHERE (([IdOrderProduct] = @Original_IdOrderProd" +
-                "uct) AND ([IdOrder] = @Original_IdOrder) AND ([IdProduct] = @Original_IdProduct)" +
-                ")";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[OrderProduct] WHERE (([IdOrderProduct] = @Original_IdOrderProduct) AND ([IdOrder] = @Original_IdOrder) AND ([IdProduct] = @Original_IdProduct) AND ([Size] = @Original_Size) AND ([Amount] = @Original_Amount) AND ([OrderProductPrice] = @Original_OrderProductPrice))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdOrderProduct", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdOrderProduct", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdOrder", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdOrder", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdProduct", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdProduct", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderProductPrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "OrderProductPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[OrderProduct] ([IdOrder], [IdProduct]) VALUES (@IdOrder, @IdPr" +
-                "oduct);\r\nSELECT IdOrderProduct, IdOrder, IdProduct FROM OrderProduct WHERE (IdOr" +
-                "derProduct = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[OrderProduct] ([IdOrder], [IdProduct], [Size], [Amount], [OrderProductPrice]) VALUES (@IdOrder, @IdProduct, @Size, @Amount, @OrderProductPrice);
+SELECT IdOrderProduct, IdOrder, IdProduct, Size, Amount, OrderProductPrice FROM OrderProduct WHERE (IdOrderProduct = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdOrder", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdOrder", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdProduct", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdProduct", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderProductPrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "OrderProductPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[OrderProduct] SET [IdOrder] = @IdOrder, [IdProduct] = @IdProduct WHERE (([IdOrderProduct] = @Original_IdOrderProduct) AND ([IdOrder] = @Original_IdOrder) AND ([IdProduct] = @Original_IdProduct));
-SELECT IdOrderProduct, IdOrder, IdProduct FROM OrderProduct WHERE (IdOrderProduct = @IdOrderProduct)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[OrderProduct] SET [IdOrder] = @IdOrder, [IdProduct] = @IdProduct, [Size] = @Size, [Amount] = @Amount, [OrderProductPrice] = @OrderProductPrice WHERE (([IdOrderProduct] = @Original_IdOrderProduct) AND ([IdOrder] = @Original_IdOrder) AND ([IdProduct] = @Original_IdProduct) AND ([Size] = @Original_Size) AND ([Amount] = @Original_Amount) AND ([OrderProductPrice] = @Original_OrderProductPrice));
+SELECT IdOrderProduct, IdOrder, IdProduct, Size, Amount, OrderProductPrice FROM OrderProduct WHERE (IdOrderProduct = @IdOrderProduct)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdOrder", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdOrder", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdProduct", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdProduct", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Size", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "Size", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OrderProductPrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "OrderProductPrice", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdOrderProduct", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdOrderProduct", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdOrder", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdOrder", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdProduct", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdProduct", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Size", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "Size", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_OrderProductPrice", global::System.Data.SqlDbType.Decimal, 0, global::System.Data.ParameterDirection.Input, 18, 1, "OrderProductPrice", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdOrderProduct", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdOrderProduct", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -4099,7 +4086,8 @@ SELECT IdOrderProduct, IdOrder, IdProduct FROM OrderProduct WHERE (IdOrderProduc
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdOrderProduct, IdOrder, IdProduct FROM dbo.OrderProduct";
+            this._commandCollection[0].CommandText = "SELECT IdOrderProduct, IdOrder, IdProduct, Size, Amount, OrderProductPrice FROM d" +
+                "bo.OrderProduct";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4160,10 +4148,13 @@ SELECT IdOrderProduct, IdOrder, IdProduct FROM OrderProduct WHERE (IdOrderProduc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdOrderProduct, int Original_IdOrder, int Original_IdProduct) {
+        public virtual int Delete(int Original_IdOrderProduct, int Original_IdOrder, int Original_IdProduct, decimal Original_Size, int Original_Amount, decimal Original_OrderProductPrice) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdOrderProduct));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_IdOrder));
             this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_IdProduct));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((decimal)(Original_Size));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Amount));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((decimal)(Original_OrderProductPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4184,9 +4175,12 @@ SELECT IdOrderProduct, IdOrder, IdProduct FROM OrderProduct WHERE (IdOrderProduc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int IdOrder, int IdProduct) {
+        public virtual int Insert(int IdOrder, int IdProduct, decimal Size, int Amount, decimal OrderProductPrice) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IdOrder));
             this.Adapter.InsertCommand.Parameters[1].Value = ((int)(IdProduct));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((decimal)(Size));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Amount));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((decimal)(OrderProductPrice));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4207,13 +4201,19 @@ SELECT IdOrderProduct, IdOrder, IdProduct FROM OrderProduct WHERE (IdOrderProduc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int IdOrder, int IdProduct, int Original_IdOrderProduct, int Original_IdOrder, int Original_IdProduct, int IdOrderProduct) {
+        public virtual int Update(int IdOrder, int IdProduct, decimal Size, int Amount, decimal OrderProductPrice, int Original_IdOrderProduct, int Original_IdOrder, int Original_IdProduct, decimal Original_Size, int Original_Amount, decimal Original_OrderProductPrice, int IdOrderProduct) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(IdOrder));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(IdProduct));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_IdOrderProduct));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_IdOrder));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_IdProduct));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(IdOrderProduct));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((decimal)(Size));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Amount));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(OrderProductPrice));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_IdOrderProduct));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_IdOrder));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_IdProduct));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Original_Size));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Amount));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Original_OrderProductPrice));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(IdOrderProduct));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -4234,8 +4234,8 @@ SELECT IdOrderProduct, IdOrder, IdProduct FROM OrderProduct WHERE (IdOrderProduc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int IdOrder, int IdProduct, int Original_IdOrderProduct, int Original_IdOrder, int Original_IdProduct) {
-            return this.Update(IdOrder, IdProduct, Original_IdOrderProduct, Original_IdOrder, Original_IdProduct, Original_IdOrderProduct);
+        public virtual int Update(int IdOrder, int IdProduct, decimal Size, int Amount, decimal OrderProductPrice, int Original_IdOrderProduct, int Original_IdOrder, int Original_IdProduct, decimal Original_Size, int Original_Amount, decimal Original_OrderProductPrice) {
+            return this.Update(IdOrder, IdProduct, Size, Amount, OrderProductPrice, Original_IdOrderProduct, Original_IdOrder, Original_IdProduct, Original_Size, Original_Amount, Original_OrderProductPrice, Original_IdOrderProduct);
         }
     }
     
